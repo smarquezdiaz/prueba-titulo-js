@@ -13,9 +13,27 @@ test('validad titulo con regex (contiene palabra)', async ({page}) => {
     await page.goto('https://example.com/');
 
     await sleep(3000);
-    
+
     // Verificamos palabra
     await expect(page).toHaveTitle(/Example/);
+});
+
+test('validar el titulo exacto de twitch', async ({page}) => {
+    // Abre la pagina twitch.tv
+    await page.goto('https://www.twitch.tv/'); 
+    await sleep(3000);
+    // Verificacion del titulo exacto
+    await expect(page).toHaveTitle('Twitch');
+});
+
+test('validar titulo con regex (contiene palabra) en twitch', async ({page}) => {
+    // Abre la pagina twitch.tv
+    await page.goto('https://www.twitch.tv/'); 
+
+    await sleep(3000);
+    
+    // Verificamos palabra
+    await expect(page).toHaveTitle(/Twitch/);
 });
 
 function sleep (time) {
