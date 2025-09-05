@@ -13,3 +13,7 @@ test('validad titulo con regex (contiene palabra)', async ({page}) => {
     // Verificamos palabra
     await expect(page).toHaveTitle(/Example/);
 });
+
+function sleep (time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
