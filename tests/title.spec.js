@@ -3,6 +3,7 @@ const {test, expect} = require('@playwright/test');
 test('validad el titulo exacto', async ({page}) => {
     // Abre la pagina example.com
     await page.goto('https://example.com/');
+    await sleep(3000);
     // Verificacion del titulo exacto
     await expect(page).toHaveTitle('Example Domain');
 });
@@ -10,6 +11,9 @@ test('validad el titulo exacto', async ({page}) => {
 test('validad titulo con regex (contiene palabra)', async ({page}) => {
     // Abre la pagina example.com
     await page.goto('https://example.com/');
+
+    await sleep(3000);
+    
     // Verificamos palabra
     await expect(page).toHaveTitle(/Example/);
 });
